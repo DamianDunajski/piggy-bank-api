@@ -14,14 +14,22 @@ import java.net.http.HttpResponse;
 
 @Profile("quote-orchestrator")
 @Service
-public class DataStoreClient {
+public class AccountStoreClient {
     private final ObjectMapper objectMapper;
 
     private final String accountStoreURI;
 
-    public DataStoreClient(ObjectMapper objectMapper, @Value("${application.account-store-uri}") String accountStoreURI) {
+    public AccountStoreClient(ObjectMapper objectMapper, @Value("${application.account-store-uri}") String accountStoreURI) {
         this.objectMapper = objectMapper;
         this.accountStoreURI = accountStoreURI;
+    }
+
+    public boolean isHealthy() throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(accountStoreURI + "/healthcheck"))
+                .GET()
+                .build();
+        return HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.discarding()).statusCode() == 200;
     }
 
     public Account getAccount(long id) throws IOException, InterruptedException {

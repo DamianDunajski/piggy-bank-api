@@ -1,7 +1,7 @@
 package com.damdun.piggybank.controllers;
 
 import com.damdun.piggybank.models.Account;
-import com.damdun.piggybank.services.DataStoreClient;
+import com.damdun.piggybank.services.AccountStoreClient;
 import com.damdun.piggybank.models.Quote;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,11 +21,11 @@ import java.time.Period;
 @Slf4j
 public class OrchestrationController {
 
-    private final DataStoreClient dataStoreClient;
+    private final AccountStoreClient accountStoreClient;
 
     @GetMapping(path = "/accounts/{accountId}/quotes/{effectiveDate}")
     public @ResponseBody Quote requestQuote(@PathVariable int accountId, @PathVariable LocalDate effectiveDate) throws IOException, InterruptedException {
-        Account account = dataStoreClient.getAccount(accountId);
+        Account account = accountStoreClient.getAccount(accountId);
 
         long monthsSinceAccountOpening = Period.between(account.getOpenedOn(), effectiveDate).toTotalMonths();
 

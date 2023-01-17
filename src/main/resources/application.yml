@@ -6,6 +6,10 @@ management:
       base-path: /
       path-mapping:
         health: healthcheck
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
 ---
 server:
   port: 8080
