@@ -8,11 +8,12 @@
         <version>3.0.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.kainos</groupId>
-    <artifactId>spring-boot-demo</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>spring-boot-demo</name>
-    <description>Demo project for Spring Boot</description>
+
+    <groupId>com.damdun</groupId>
+    <artifactId>piggy-bank-api</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>piggy-bank-app</name>
+
     <properties>
         <java.version>17</java.version>
     </properties>
