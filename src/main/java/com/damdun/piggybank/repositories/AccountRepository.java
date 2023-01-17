@@ -1,6 +1,6 @@
-package com.kainos.springbootdemo.repositories;
+package com.damdun.piggybank.repositories;
 
-import com.kainos.springbootdemo.models.Account;
+import com.damdun.piggybank.models.Account;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

@@ -1,4 +1,4 @@
-package com.kainos.springbootdemo.models;
+package com.damdun.piggybank.models;
 
 import lombok.Builder;
 import lombok.Data;

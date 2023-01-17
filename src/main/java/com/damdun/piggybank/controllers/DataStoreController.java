@@ -1,7 +1,7 @@
-package com.kainos.springbootdemo.controllers;
+package com.damdun.piggybank.controllers;
 
-import com.kainos.springbootdemo.models.Account;
-import com.kainos.springbootdemo.repositories.AccountRepository;
+import com.damdun.piggybank.models.Account;
+import com.damdun.piggybank.repositories.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;

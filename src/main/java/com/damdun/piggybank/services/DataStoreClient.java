@@ -1,8 +1,7 @@
-package com.kainos.springbootdemo.services;
+package com.damdun.piggybank.services;
 
+import com.damdun.piggybank.models.Account;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kainos.springbootdemo.models.Account;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
