@@ -1,0 +1,14 @@
+services:
+  account-store:
+    image: damiand555/piggy-bank-api:latest
+    environment:
+      - SPRING_PROFILES_INCLUDE=account-store
+    ports:
+      - 8081:8081
+  quote-orchestrator:
+    image: damiand555/piggy-bank-api:latest
+    environment:
+      - SPRING_PROFILES_INCLUDE=quote-orchestrator
+      - APPLICATION_ACCOUNT_STORE_URI=http://account-store:8081/account-store
+    ports:
+      - 8080:8080
