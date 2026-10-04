@@ -33,7 +33,9 @@ public class AccountStoreClient {
                 .header(DAPR_APP_ID_HEADER_NAME, DAPR_APP_ID_HEADER_VALUE)
                 .GET()
                 .build();
-        return HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.discarding()).statusCode() == 200;
+        try (HttpClient client = HttpClient.newHttpClient()) {
+            return client.send(request, HttpResponse.BodyHandlers.discarding()).statusCode() == 200;
+        }
     }
 
     public Account getAccount(long id) throws IOException, InterruptedException {
@@ -42,9 +44,9 @@ public class AccountStoreClient {
                 .header(DAPR_APP_ID_HEADER_NAME, DAPR_APP_ID_HEADER_VALUE)
                 .GET()
                 .build();
-        String accountJson = HttpClient.newHttpClient()
-                .send(request, HttpResponse.BodyHandlers.ofString())
-                .body();
-        return objectMapper.readValue(accountJson, Account.class);
+        try (HttpClient client = HttpClient.newHttpClient()) {
+            String accountJson = client.send(request, HttpResponse.BodyHandlers.ofString()).body();
+            return objectMapper.readValue(accountJson, Account.class);
+        }
     }
 }
