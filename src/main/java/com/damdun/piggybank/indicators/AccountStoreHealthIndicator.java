@@ -1,8 +1,8 @@
 package com.damdun.piggybank.indicators;
 
 import com.damdun.piggybank.services.AccountStoreClient;
-import org.springframework.boot.actuate.health.Health;
-import org.springframework.boot.actuate.health.HealthIndicator;
+import org.springframework.boot.health.contributor.Health;
+import org.springframework.boot.health.contributor.HealthIndicator;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
