@@ -1,4 +1,4 @@
-package com.kainos.springbootdemo;
+package com.damdun.piggybank;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

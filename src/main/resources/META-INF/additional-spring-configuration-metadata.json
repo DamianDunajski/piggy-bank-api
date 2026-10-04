@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "application.account-store-uri",
+      "type": "java.lang.String",
+      "description": "Account Store URI."
+  }
+] }
